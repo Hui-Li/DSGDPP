@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 2.6)
 project(MF C CXX)
 
 # add a NativeRelease build type
-SET( CMAKE_CXX_FLAGS_NATIVERELEASE "-O3 -DNDEBUG -march=native -ftree-vectorize" CACHE STRING
+SET( CMAKE_CXX_FLAGS_NATIVERELEASE "-O3 -DNDEBUG -march=native -ftree-vectorize -std=c++11" CACHE STRING
     "Flags used by the C++ compiler during native builds."
     FORCE )
-SET( CMAKE_C_FLAGS_NATIVERELEASE "-O3 -DNDEBUG -march=native -ftree-vectorize" CACHE STRING
+SET( CMAKE_C_FLAGS_NATIVERELEASE "-O3 -DNDEBUG -march=native -ftree-vectorize -std=c++11" CACHE STRING
     "Flags used by the C compiler during native builds."
     FORCE )
 SET( CMAKE_EXE_LINKER_FLAGS_NATIVERELEASE "" CACHE STRING

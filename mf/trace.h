@@ -50,7 +50,7 @@ struct TraceEntry {
 		out << "epoch=" << epoch << ", ";
 		out << "loss=" << loss  << ", ";
 		out << "loss.test=";
-		if (isnan(testLoss)) {
+		if (std::isnan(testLoss)) {
 			out << "NA"<< ", ";
 		}
 		else {
@@ -104,7 +104,7 @@ struct SgdTraceEntry: public  TraceEntry{
 				<<", loss="<< timeLoss/1E9<<", loss.test="<<timeTestLoss/1E9<<"), ";
 
 		out<<" eps=";
-		if (isnan(eps)) {
+		if (std::isnan(eps)) {
 			out << "NA";
 		} else {
 			out << eps;

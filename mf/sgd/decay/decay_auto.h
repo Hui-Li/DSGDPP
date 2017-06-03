@@ -92,7 +92,7 @@ retry:
 				LOG4CXX_DEBUG(detail::logger, "Tried eps=" << epsToTry[i] << ", loss=" << losses[i]);
 				//std::cout<<"Tried eps=" << epsToTry[i] << ", loss=" << losses[i]<<std::endl;
 
-				if (!isnan(losses[i]) && losses[i] < bestLoss) {
+				if (!std::isnan(losses[i]) && losses[i] < bestLoss) {
 					bestLoss = losses[i];
 					bestIndex = i;
 				}
@@ -103,7 +103,7 @@ retry:
 			if (bestIndex == 0) {
 				// accept when it is the biggest one tried
 				accept = true;
-			} else if (!isnan(losses[bestIndex-1]) && losses[bestIndex-1]<losses[bestIndex]*100) {
+			} else if (!std::isnan(losses[bestIndex-1]) && losses[bestIndex-1]<losses[bestIndex]*100) {
 				// accept when the next-largest step size tried was not significantly worse (factor 100)
 				accept = true;
 			} else {
